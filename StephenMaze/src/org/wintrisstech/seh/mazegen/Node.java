@@ -1,10 +1,11 @@
 package org.wintrisstech.seh.mazegen;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Node {
-	private Set<Edge> adjacentEdges = new HashSet<Edge>();
+	private HashMap<Direction, Edge> adjacent = new HashMap<Direction, Edge>();
 	private boolean connected = false;
 	private final int row, col;
 	public Node(int row, int col) {
@@ -17,11 +18,11 @@ public class Node {
 	public int getCol() {
 		return col;
 	}
-	public Set<Edge> getAdjacent() {
-		return adjacentEdges;
+	public HashMap<Direction, Edge> getAdjacent() {
+		return new HashMap<Direction, Edge>(adjacent);
 	}
-	public void addAdjacent(Edge e) {
-		adjacentEdges.add(e);
+	public void addAdjacent(Direction direct, Edge e) {
+		adjacent.put(direct, e);
 	}
 	public boolean isConnected() {
 		return connected;

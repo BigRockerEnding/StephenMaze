@@ -24,7 +24,7 @@ public class MazePanel extends JPanel implements Runnable, ActionListener {
 	private final int numRows, numCols;
 	private final List<Edge> maze;
 	private final List<Edge> path;
-	private final static int CELL_WIDTH = 6;
+	private final static int CELL_WIDTH = 10;
 	private final static int CENTER_OFFSET = CELL_WIDTH / 2;
 
 	public MazePanel(int numRows, int numCols, List<Edge> maze, List<Edge> path) {

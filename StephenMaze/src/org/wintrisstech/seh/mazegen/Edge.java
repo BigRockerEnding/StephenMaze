@@ -5,13 +5,14 @@ import java.util.Random;
 public class Edge implements Comparable<Edge>{
 	private final Node u, v;
 	private final int cost;
-	public Edge(Node nodeA, Node nodeB) {
-		this.u = nodeA;
-		this.v = nodeB;
+	public Edge(Node nodeU, Node nodeV) {
+		this.u = nodeU;
+		this.v = nodeV;
 		Random r = new Random();
 		this.cost = r.nextInt(50) + 1;
-		nodeA.addAdjacent(this);
-		nodeB.addAdjacent(this);
+		Direction direct;
+		nodeU.addAdjacent(this);
+		nodeV.addAdjacent(this);
 	}
 	public Node getU() {
 		return u;
